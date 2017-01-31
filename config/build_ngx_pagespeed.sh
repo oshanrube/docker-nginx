@@ -473,12 +473,11 @@ Not deleting $directory; name is suspiciously short.  Something is wrong."
   run cd "$nps_module_dir"
 
   echo "Extracting PSOL..."
-  # wget https://dl.google.com/dl/page-speed/psol/1.11.33.4.tar.gz -O nginx/pagespeed/1.11.33.4.tar.gz
-  if [ ! -f "pagespeed/1.11.33.4.tar.gz" ]
+  if [ ! -f "../pagespeed/1.11.33.4.tar.gz" ]
   then
-    wget "https://dl.google.com/dl/page-speed/psol/1.11.33.4.tar.gz" -O "pagespeed/1.11.33.4.tar.gz"
+    wget "https://dl.google.com/dl/page-speed/psol/1.11.33.4.tar.gz" -O "../pagespeed/1.11.33.4.tar.gz"
   fi
-  run tar -xzf "pagespeed/1.11.33.4.tar.gz" # extracts to psol/
+  run tar -xzf "../pagespeed/1.11.33.4.tar.gz" # extracts to psol/
 
   if "$DYNAMIC_MODULE"; then
     add_module="--add-dynamic-module=$nps_module_dir"
@@ -509,12 +508,12 @@ Not deleting $directory; name is suspiciously short.  Something is wrong."
     nginx_leaf="nginx-${NGINX_VERSION}.tar.gz"
     nginx_fname="$TEMPDIR/$nginx_leaf"
 
-    if [ ! -f "pagespeed/nginx-1.11.6.tar.gz" ]
+    if [ ! -f "../pagespeed/nginx-1.11.6.tar.gz" ]
     then
-      wget "http://nginx.org/download/nginx-1.11.6.tar.gz" -O "pagespeed/nginx-1.11.6.tar.gz"
+      wget "http://nginx.org/download/nginx-1.11.6.tar.gz" -O "../pagespeed/nginx-1.11.6.tar.gz"
     fi
-    # run wget "http://nginx.org/download/nginx-1.11.6.tar.gz" -O "nginx/pagespeed/nginx-1.11.6.tar.gz"
-    run cp "pagespeed/nginx-1.11.6.tar.gz" $nginx_fname
+    # run wget "http://nginx.org/download/nginx-1.11.6.tar.gz" -O "../pagespeed/nginx-1.11.6.tar.gz"
+    run cp "../pagespeed/nginx-1.11.6.tar.gz" $nginx_fname
     nginx_dir="$BUILDDIR/nginx-${NGINX_VERSION}/"
     delete_if_already_exists "$nginx_dir"
     echo "Extracting nginx..."
