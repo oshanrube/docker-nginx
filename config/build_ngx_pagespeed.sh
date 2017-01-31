@@ -476,7 +476,7 @@ Not deleting $directory; name is suspiciously short.  Something is wrong."
   # wget https://dl.google.com/dl/page-speed/psol/1.11.33.4.tar.gz -O nginx/pagespeed/1.11.33.4.tar.gz
   if [ ! -f "pagespeed/1.11.33.4.tar.gz" ]
   then
-    wget https://dl.google.com/dl/page-speed/psol/1.11.33.4.tar.gz -O pagespeed/1.11.33.4.tar.gz
+    wget "https://dl.google.com/dl/page-speed/psol/1.11.33.4.tar.gz" -O "pagespeed/1.11.33.4.tar.gz"
   fi
   run tar -xzf "pagespeed/1.11.33.4.tar.gz" # extracts to psol/
 
