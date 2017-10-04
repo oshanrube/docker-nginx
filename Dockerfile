@@ -52,5 +52,8 @@ RUN ln -sf /dev/stderr /var/log/nginx/error_log.log
 # TODO: Set the default port for applications built using this image
 EXPOSE 80
 
+# set user
+USER 1000
+
 # TODO: Set the default CMD for the image
 CMD $STI_SCRIPTS_PATH"/usage"
