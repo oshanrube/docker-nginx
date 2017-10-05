@@ -39,7 +39,7 @@ ENV NGINX_VERSION=1.6.3
 COPY ./.s2i/bin/ $STI_SCRIPTS_PATH
 
 # Copy the S2I scripts to /usr/libexec/s2i since we set the label that way
-RUN mkdir -p /var/www/html
+RUN mkdir -p /var/www/html /var/log/nginx
 
 # TODO: Drop the root user and make the content of /opt/app-root owned by user 1001
 RUN chmod -R a+rwx /var/www/html && chown -R 1001:0 /var/www/html
